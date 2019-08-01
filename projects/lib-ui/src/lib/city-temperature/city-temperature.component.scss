@@ -1,0 +1,21 @@
+@import "../../../../web-client/src/styles.scss";
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: .8rem;
+  border: 1px solid var(--color-primary);
+
+  animation-name: moveInBottom;
+  animation-duration: .2s;
+  animation-timing-function: ease-out;
+}
+.name {
+  font-size: 1.6rem;
+}
+
+.temperature {
+  font-size: 3.2rem;
+  justify-self: center;
+}

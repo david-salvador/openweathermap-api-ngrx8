@@ -1,0 +1,8 @@
+<div class="table-header" *ngIf="isFirst">
+  <div></div>
+  <div *ngFor="let name of cityNames" class="table-header__city-name">{{name}}</div>
+</div>
+<div class="table-row">
+  <div class="table-row__date">{{cityDate}} {{cityTime}}</div>
+  <div *ngFor="let temp of cityTemperatures; index as i" class="table-row__ta">{{temp.toFixed(1)}} ºC</div>
+</div>

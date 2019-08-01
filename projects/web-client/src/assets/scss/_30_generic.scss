@@ -1,0 +1,67 @@
+
+// ==========================================================================
+// # BOX-SIZING
+// ==========================================================================
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; // css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+}
+
+html {
+    // This defines what 1rem is
+    font-size: calc(10/16 * 100%); // 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // if width < 1200?
+        font-size: calc(9/16 * 100%); // font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+    @include respond(tab-port) { // if width < 900
+        font-size: calc(8/16 * 100%); // font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) { // if width > 1800
+        // font-size: 75%; //1rem = 12, 12/16
+        font-size: calc(12/16 * 100%);
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 1.6rem * 1.5;  // for the body of entire web page; padding does not get inherited :-)
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+
+// ==========================================================================
+// # ANIMATIONS - Shared declarations for certain elements.
+// ==========================================================================
+
+@keyframes moveInLeft {
+    // for browser performance is best animate max 2 properties concurrently
+      0% { opacity: 0; transform: translateX(-10rem); } // initial state (start more in the left)
+     80% {             transform: translateX(1rem); }
+    100% { opacity: 1; transform: translate(0); }       // the way it looks now in html
+}
+
+@keyframes moveInRight {
+      0% { opacity: 0; transform: translateX(10rem); }
+     80% {             transform: translateX(-1rem); }  //transform: rotate(360deg)
+    100% { opacity: 1; transform: translate(0); }
+}
+
+@keyframes moveInBottom {
+      0% { opacity: 0; transform: translateY(3rem); }
+    100% { opacity: 1; transform: translate(0); }
+}

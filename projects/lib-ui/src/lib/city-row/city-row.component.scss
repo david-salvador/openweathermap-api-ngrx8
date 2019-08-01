@@ -1,0 +1,54 @@
+@import "../../../../web-client/src/styles.scss";
+:host {
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: darkcyan;
+  color: white;
+
+
+  --first-column-width: 20rem;
+  @include respond(tab-port){
+    --first-column-width: 12rem;
+  }
+  @include respond(phone){
+    --first-column-width: 10rem;
+  }
+
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: var(--first-column-width) repeat(4, 1fr);
+  // justify-items: center;
+  //border: 1px black;
+
+  & > * {
+    border: 1px solid var(--color-primary-light);
+  }
+
+  & > &__city-name {
+    text-align: center;
+  }
+}
+.table-row {
+  display: grid;
+  grid-template-columns: var(--first-column-width) repeat(4, 1fr);
+  animation-name: moveInRight;
+  animation-duration: .2s;
+  animation-timing-function: ease-out;
+
+  & > * {
+    border: 1px solid var(--color-primary-light);
+    padding: 1rem;
+  }
+
+  & > &__date {
+    text-align: right;
+  }
+  & > &__ta {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    font-size: 2.4rem;
+  }
+}

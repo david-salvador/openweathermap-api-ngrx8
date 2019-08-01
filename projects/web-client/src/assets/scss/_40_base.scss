@@ -1,0 +1,68 @@
+address,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: $inuit-global-spacing-unit;
+}
+
+dd, ol, ul {
+  margin-left: $inuit-global-spacing-unit;
+}
+
+body {
+    background-image: linear-gradient(to right bottom, var(--color-grey-light-3), var(--color-grey-light-4));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+// ==========================================================================
+// # TYPOGRAPHY -
+// ==========================================================================
+body {
+    font-size: 1.6rem; //16 px @ root *16px
+
+    line-height: 1.5em;
+    font-family: 'Zilla Slab', sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: var(--color-primary);
+}
+
+
+h1 {
+    font-family: 'Zilla Slab', sans-serif;
+    font-weight: 700;
+    font-size: calc(1.6rem  + .4rem * 4);
+    line-height: calc(1.5 * 1.6 * 2 / (1.6 + .4 * 4))  ;
+    margin-bottom: calc(1.5 * 1.6 * 1 / (1.6 + .4 * 4) * 1em);
+    background-color: rgba(cyan, .4);
+    border: 1px solid rgba(yellow, .8);
+    padding: 0 .8rem;
+}
+
+h2 {
+    font-family: 'Zilla Slab', sans-serif;
+    font-weight: 700;
+    font-size: calc(1.6rem  + .4rem * 3);
+    line-height: calc(1.5 * 1.6 * 2 / (1.6 + .4 * 3))  ;
+    margin-bottom: calc(1.5 * 1.6 / (1.6 + .4 * 3) * 1em);
+    border: 1px solid rgba(yellow, .8);
+    background-color: rgba(cyan, .4);
+    padding: 0 .8rem;
+}
+
+p {
+    font-family: 'Zilla Slab', sans-serif;
+    font-weight: 300;
+    font-size: $default-font-size;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

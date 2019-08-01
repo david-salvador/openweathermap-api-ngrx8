@@ -1,0 +1,14 @@
+<h1>openWeatherMap Api Integration, Angular8 + ngrx8</h1>
+<div class="temperature-cards">
+  <ng-container *ngFor="let key of lastCityKeys; index as i">
+    <lui-city-temperature [city]="lastCity[key].city" [temperature]="lastCity[key].temperature">
+    </lui-city-temperature>
+  </ng-container>
+</div>
+
+<ng-container *ngFor="let cs of (cities$|async); index as i">
+  <lui-city-row [citiesEntry]="cs" [isFirst]="i===0">
+  </lui-city-row>
+</ng-container>
+
+<router-outlet></router-outlet>
